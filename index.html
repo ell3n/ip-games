@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taller de CIDR</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <span class="eyebrow">Xarxes · Adreçament IP</span>
+      <h1>Taller de CIDR <span class="slash">/N</span></h1>
+    </div>
+    <div class="score" aria-live="polite">
+      <span class="chip">Encerts <b id="sOk">0</b> de <b id="sTot">0</b></span>
+      <span class="chip">Ratxa <b id="sStreak">0</b></span>
+      <button class="link" id="reset" type="button">Reinicia</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Tipus d’exercici">
+    <button class="tab" role="tab" id="tab-binari" data-mode="binari" type="button">Decimal ↔ binari</button>
+    <button class="tab" role="tab" id="tab-ip" data-mode="ip" type="button">Analitza una IP</button>
+    <button class="tab" role="tab" id="tab-crea" data-mode="crea" type="button">Crea una xarxa</button>
+  </nav>
+
+  <main class="card" id="card">
+    <div class="toolbar" id="toolbar"></div>
+    <div class="prompt" id="prompt"></div>
+    <form id="form" autocomplete="off" novalidate>
+      <div id="inputs"></div>
+    </form>
+    <div class="actions">
+      <button class="btn primary" type="submit" form="form" id="check">Comprova</button>
+      <button class="btn" type="button" id="showStep">Mostra un pas</button>
+      <button class="btn" type="button" id="newEx">Nou exercici</button>
+    </div>
+    <section class="solution" id="solution" hidden aria-live="polite">
+      <div class="sol-head">
+        <h2>Solució pas a pas</h2>
+        <button class="link" type="button" id="showAll">Mostra-ho tot</button>
+      </div>
+      <ol class="steps" id="steps"></ol>
+    </section>
+  </main>
+
+  <footer>Recepta: 1 màscara · 2 separa xarxa i host · 3 xarxa = bits de host a 0 · 4 broadcast = bits de host a 1 · 5 hosts = 2<sup>bits de host</sup> − 2</footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
